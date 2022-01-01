@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Level } from 'react-bulma-components'
+import { Button, Form, Level } from 'react-bulma-components'
 import PropTypes from 'prop-types'
 import AppState from '../app_states'
 
@@ -9,13 +9,13 @@ export class Menu extends React.Component {
       <Level>
         <Level.Side>
           <Level.Item>
-            <Button
+            <Form.InputFile
               renderAs="a"
               color="primary"
               onClick={() => this.props.onStateChange(AppState.SRT)}
-            >
-              Process GIFs by SRT
-            </Button>
+              label="Generate from SRT"
+              inputProps={{ accept: '.srt' }}
+            />
           </Level.Item>
           <Level.Item>
             <Button
