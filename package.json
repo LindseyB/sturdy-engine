@@ -58,6 +58,7 @@
     "electron-squirrel-startup": "^1.0.0",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
+    "react-bulma-components": "^4.0.7",
     "react-dom": "^17.0.2",
     "style-loader": "^3.3.1"
   },

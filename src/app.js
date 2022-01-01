@@ -2,6 +2,7 @@ import '../scss/main.scss'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Container, Content, Columns, Heading } from 'react-bulma-components'
 import { Menu } from './components/menu'
 import AppState from './app_states'
 const { ipcRenderer } = require('electron')
@@ -21,18 +22,18 @@ export default class App extends React.Component {
   render() {
     console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
     return (
-      <div className="container">
-        <h1 className="title">Surdy Engine</h1>
-        <div className="columns">
-          <div className="column is-one-third">
+      <Container>
+        <Heading>Surdy Engine</Heading>
+        <Columns>
+          <Columns.Column>
             <Menu
               appState={this.state.appState}
               onStateChange={this.onStateChange}
             />
-          </div>
-          <div className="column">main</div>
-        </div>
-      </div>
+            <Content>Welcome to Sturdy Engine the GIF processor.</Content>
+          </Columns.Column>
+        </Columns>
+      </Container>
     )
   }
 }

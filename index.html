@@ -3,21 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hello World!</title>
+    <title>Sturdy Engine</title>
   </head>
   <body>
-    <section class="section">
-      <div class="container">
-        <h1 class="title">Hello World</h1>
-        <p class="subtitle">My first website with <strong>Bulma</strong>!</p>
-        <p>
-          We are using Node.js <span id="node-version"></span>, Chromium
-          <span id="chrome-version"></span>, and Electron
-          <span id="electron-version"></span>.
-        </p>
-        <div id="react-root"></div>
-      </div>
-    </section>
+    <div id="react-root"></div>
 
     <!-- You can also require other files to run in this process -->
     <script
@@ -30,17 +19,17 @@
     ></script>
     <script>
       // set the bundle path based on how we are running
-      var bundlePath = "./build/bundle.js";
-      if (typeof process !== "undefined" && process.env.ENVIRONMENT === "dev") {
-        bundlePath = "http://localhost:8080/build/bundle.js";
+      var bundlePath = './build/bundle.js'
+      if (typeof process !== 'undefined' && process.env.ENVIRONMENT === 'dev') {
+        bundlePath = 'http://localhost:8080/build/bundle.js'
       }
 
-      var bundleScriptEl = document.createElement("script");
-      bundleScriptEl.src = bundlePath;
+      var bundleScriptEl = document.createElement('script')
+      bundleScriptEl.src = bundlePath
       document.currentScript.parentNode.insertBefore(
         bundleScriptEl,
         document.currentScript
-      );
+      )
     </script>
   </body>
 </html>

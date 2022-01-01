@@ -1,36 +1,33 @@
 import React from 'react'
+import { Button, Level } from 'react-bulma-components'
 import PropTypes from 'prop-types'
 import AppState from '../app_states'
 
 export class Menu extends React.Component {
-  x
   render() {
-    // TODO: replace with map
     return (
-      <aside className="menu">
-        <ul className="menu-list">
-          <li>
-            <a
-              className={
-                this.props.appState === AppState.SRT ? 'is-active' : ''
-              }
+      <Level>
+        <Level.Side>
+          <Level.Item>
+            <Button
+              renderAs="a"
+              color="primary"
               onClick={() => this.props.onStateChange(AppState.SRT)}
             >
               Process GIFs by SRT
-            </a>
-          </li>
-          <li>
-            <a
-              className={
-                this.props.appState === AppState.MASS ? 'is-active' : ''
-              }
+            </Button>
+          </Level.Item>
+          <Level.Item>
+            <Button
+              renderAs="a"
+              color="primary"
               onClick={() => this.props.onStateChange(AppState.MASS)}
             >
               Bulk Process GIFs
-            </a>
-          </li>
-        </ul>
-      </aside>
+            </Button>
+          </Level.Item>
+        </Level.Side>
+      </Level>
     )
   }
 }
