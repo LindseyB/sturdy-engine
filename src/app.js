@@ -22,7 +22,7 @@ export default class App extends React.Component {
   render() {
     console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
     return (
-      <Container>
+      <Container m={3}>
         <Heading>Surdy Engine</Heading>
         <Columns>
           <Columns.Column>
