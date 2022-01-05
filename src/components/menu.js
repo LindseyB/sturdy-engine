@@ -1,3 +1,5 @@
+import '../../scss/main.scss'
+
 import React from 'react'
 import { Button, Form, Level } from 'react-bulma-components'
 import PropTypes from 'prop-types'
