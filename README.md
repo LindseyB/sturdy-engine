@@ -27,3 +27,7 @@ Run eslint
 ### `npm run lint:fix`
 
 Run eslint with autofix enabled
+
+### `npm run storybook`
+
+Run storybook
