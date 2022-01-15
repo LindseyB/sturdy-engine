@@ -6,6 +6,17 @@ import PropTypes from 'prop-types'
 import AppState from '../app_states'
 
 export class Menu extends React.Component {
+  onSrtChange = (e) => {
+    const reader = new FileReader()
+    for (const file of e.target.files) {
+      reader.onload = function () {
+        let content = reader.result
+        console.log(content)
+      }
+      reader.readAsText(file)
+    }
+  }
+
   render() {
     return (
       <Level>
@@ -15,6 +26,7 @@ export class Menu extends React.Component {
               renderAs="a"
               color="primary"
               onClick={() => this.props.onStateChange(AppState.SRT)}
+              onChange={this.onSrtChange}
               label="Generate from SRT"
               inputProps={{ accept: '.srt' }}
             />
