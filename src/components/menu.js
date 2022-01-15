@@ -9,9 +9,9 @@ export class Menu extends React.Component {
   onSrtChange = (e) => {
     const reader = new FileReader()
     for (const file of e.target.files) {
-      reader.onload = function () {
+      reader.onload = () => {
         let content = reader.result
-        console.log(content)
+        this.props.onSrtRead(content)
       }
       reader.readAsText(file)
     }
@@ -25,7 +25,6 @@ export class Menu extends React.Component {
             <Form.InputFile
               renderAs="a"
               color="primary"
-              onClick={() => this.props.onStateChange(AppState.SRT)}
               onChange={this.onSrtChange}
               label="Generate from SRT"
               inputProps={{ accept: '.srt' }}
@@ -49,4 +48,5 @@ export class Menu extends React.Component {
 Menu.propTypes = {
   appState: PropTypes.number,
   onStateChange: PropTypes.func,
+  onSrtRead: PropTypes.func,
 }

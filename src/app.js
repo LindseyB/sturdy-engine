@@ -4,6 +4,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Container, Content, Columns, Heading } from 'react-bulma-components'
 import { Menu } from './components/menu'
+import { Srt } from './components/srt'
 import AppState from './app_states'
 const { ipcRenderer } = require('electron')
 
@@ -11,12 +12,18 @@ export default class App extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = { appState: AppState.MAIN }
+    this.state = {
+      appState: AppState.MAIN,
+      srt: '',
+    }
   }
 
   onStateChange = (state) => {
-    console.log(state)
     this.setState({ appState: state })
+  }
+
+  onSrtRead = (srt) => {
+    this.setState({ srt: srt, appState: AppState.SRT })
   }
 
   render() {
@@ -29,8 +36,14 @@ export default class App extends React.Component {
             <Menu
               appState={this.state.appState}
               onStateChange={this.onStateChange}
+              onSrtRead={this.onSrtRead}
             />
-            <Content>Welcome to Sturdy Engine the GIF processor.</Content>
+            {this.state.appState === AppState.MAIN && (
+              <Content>Welcome to Sturdy Engine the GIF processor.</Content>
+            )}
+            {this.state.appState === AppState.SRT && (
+              <Srt srt={this.state.srt} />
+            )}
           </Columns.Column>
         </Columns>
       </Container>
