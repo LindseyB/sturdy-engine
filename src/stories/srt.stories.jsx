@@ -3,11 +3,13 @@ import React from 'react'
 import { Srt } from '../components/srt'
 
 export default {
-  title: 'Srt',
+  title: 'SRT',
   component: Srt,
 }
 
-const SRT = `1
+const Template = (args) => <Srt {...args} />
+
+const subtitles = `1
 00:00:00,800 --> 00:00:02,260
 Come on, you guys.
 
@@ -25,4 +27,7 @@ dereferencing a null pointer.
 Open your eyes.
 `
 
-export const Default = <Srt srt={SRT} />
+export const Default = Template.bind({})
+Default.args = {
+  srt: subtitles,
+}

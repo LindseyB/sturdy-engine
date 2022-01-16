@@ -5,6 +5,8 @@ import srtParser2 from 'srt-parser-2'
 import { Panel } from 'react-bulma-components'
 import PropTypes from 'prop-types'
 
+import { SrtItem } from './srt_item'
+
 export class Srt extends React.Component {
   constructor(props) {
     super(props)
@@ -19,12 +21,28 @@ export class Srt extends React.Component {
     }
   }
 
+  toggleItem = (id) => {
+    const item = this.state.subtitles.find((subtitle) => subtitle.id === id)
+
+    if (item) {
+      item.selected = !item.selected || true
+    }
+  }
+
   render() {
     return (
       <Panel>
         <Panel.Header>Select Subtitles to Generate GIFs</Panel.Header>
         {this.state.subtitles.map((subtitle) => {
-          return <Panel.Block key={subtitle.id}>{subtitle.text}</Panel.Block>
+          return (
+            <SrtItem
+              text={subtitle.text}
+              id={subtitle.id}
+              key={`subtitle-${subtitle.id}`}
+              onItemSelect={this.toggleItem}
+              checked={subtitle.selected || false}
+            />
+          )
         })}
       </Panel>
     )
