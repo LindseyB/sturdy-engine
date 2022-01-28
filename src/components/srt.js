@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 
 import { Item } from './srt/item'
 import { FileInput } from './srt/file_input'
+import Filter from './srt/filter'
 
 export class Srt extends React.Component {
   constructor(props) {
@@ -35,11 +36,16 @@ export class Srt extends React.Component {
     this.setState({ fileName: fileName })
   }
 
+  onFilter = (filter) => {
+    console.log(filter)
+  }
+
   render() {
     return (
       <Panel>
         <Panel.Header>Select Subtitles to Generate GIFs</Panel.Header>
         <FileInput onFileSelect={this.setFileName} />
+        <Filter onChange={this.onFilter} />
         <div style={{ maxHeight: '400px', overflowY: 'scroll' }}>
           {this.state.subtitles.map((subtitle) => {
             return (
