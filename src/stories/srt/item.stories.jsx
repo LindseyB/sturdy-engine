@@ -1,17 +1,17 @@
 import React from 'react'
 
-import { SrtItem } from '../components/srt_item'
+import { Item } from '../../components/srt/item'
 
 export default {
   title: 'SRT Item',
-  component: SrtItem,
+  component: Item,
 }
 
-const Template = (args) => <SrtItem {...args} />
+const Template = (args) => <Item {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
   text: "you're dereferencing a null pointer.",
-  id: 0,
+  id: '0',
   onItemSelect: () => {},
 }

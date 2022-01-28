@@ -1,10 +1,10 @@
-import '../../scss/main.scss'
+import '../../../scss/main.scss'
 
 import React from 'react'
 import { Form, Panel } from 'react-bulma-components'
 import PropTypes from 'prop-types'
 
-export class SrtItem extends React.Component {
+export class Item extends React.Component {
   constructor(props) {
     super(props)
 
@@ -23,7 +23,7 @@ export class SrtItem extends React.Component {
       <Panel.Block key={this.props.id}>
         <Form.Control fullwidth>
           <Form.Checkbox
-            onClick={() => this.onClick(this.props.id)}
+            onChange={() => this.onClick(this.props.id)}
             checked={this.state.checked}
           >
             {this.props.text}
@@ -34,13 +34,13 @@ export class SrtItem extends React.Component {
   }
 }
 
-SrtItem.propTypes = {
-  id: PropTypes.number.isRequired,
+Item.propTypes = {
+  id: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   onItemSelect: PropTypes.func.isRequired,
   checked: PropTypes.bool,
 }
 
-SrtItem.defaultProps = {
+Item.defaultProps = {
   checked: false,
 }
