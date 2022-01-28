@@ -20,7 +20,10 @@ export class Item extends React.Component {
 
   render() {
     return (
-      <Panel.Block key={this.props.id}>
+      <Panel.Block
+        key={this.props.id}
+        onClick={() => this.onClick(this.props.id)}
+      >
         <Form.Control fullwidth>
           <Form.Checkbox
             onChange={() => this.onClick(this.props.id)}

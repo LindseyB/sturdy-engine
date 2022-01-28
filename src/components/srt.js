@@ -6,6 +6,7 @@ import { Panel } from 'react-bulma-components'
 import PropTypes from 'prop-types'
 
 import { Item } from './srt/item'
+import { FileInput } from './srt/file_input'
 
 export class Srt extends React.Component {
   constructor(props) {
@@ -18,6 +19,7 @@ export class Srt extends React.Component {
 
     this.state = {
       subtitles: subtitles,
+      fileName: null,
     }
   }
 
@@ -29,10 +31,15 @@ export class Srt extends React.Component {
     }
   }
 
+  setFileName = (fileName) => {
+    this.setState({ fileName: fileName })
+  }
+
   render() {
     return (
       <Panel>
         <Panel.Header>Select Subtitles to Generate GIFs</Panel.Header>
+        <FileInput onFileSelect={this.setFileName} />
         <div style={{ maxHeight: '400px', overflowY: 'scroll' }}>
           {this.state.subtitles.map((subtitle) => {
             return (
