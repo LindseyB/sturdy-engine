@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'
 import { Item } from './srt/item'
 import { FileInput } from './srt/file_input'
 import Filter from './srt/filter'
+import Actions from './srt/actions'
 
 export class Srt extends React.Component {
   constructor(props) {
@@ -28,7 +29,7 @@ export class Srt extends React.Component {
       (subtitle) => subtitle.id === id
     )
 
-    if (itemIdx) {
+    if (itemIdx != -1) {
       const item = this.state.subtitles[itemIdx]
       item.selected = !item.selected ?? true
     }
@@ -45,13 +46,33 @@ export class Srt extends React.Component {
     this.setState({ filter: filter.toLowerCase() })
   }
 
+  onSelectAll = () => {
+    const subtitles = this.state.subtitles.map((subtitle) => {
+      subtitle.selected = true
+      return subtitle
+    })
+
+    this.setState({ subtitles: subtitles })
+  }
+
+  onDeselectAll = () => {
+    const subtitles = this.state.subtitles.map((subtitle) => {
+      subtitle.selected = false
+      return subtitle
+    })
+
+    this.setState({ subtitles: subtitles })
+  }
+
+  onSubmit = () => {}
+
   render() {
     return (
       <Panel>
         <Panel.Header>Select Subtitles to Generate GIFs</Panel.Header>
         <FileInput onFileSelect={this.setFileName} />
         <Filter onChange={this.onFilter} />
-        <div style={{ maxHeight: '300px', overflowY: 'scroll' }}>
+        <div style={{ maxHeight: '300px', overflowY: 'auto' }}>
           {this.state.subtitles.map((subtitle) => {
             return subtitle.selected ||
               subtitle.text.toLowerCase().includes(this.state.filter) ? (
@@ -60,11 +81,17 @@ export class Srt extends React.Component {
                 id={subtitle.id}
                 key={`subtitle-${subtitle.id}`}
                 onItemSelect={this.toggleItem}
-                checked={subtitle.selected || false}
+                checked={subtitle.selected ?? false}
               />
             ) : null
           })}
         </div>
+        <Actions
+          submitEnabled={!!this.state.fileName}
+          onSelectAll={this.onSelectAll}
+          onDeselectAll={this.onDeselectAll}
+          onSubmit={this.onSubmit}
+        />
       </Panel>
     )
   }

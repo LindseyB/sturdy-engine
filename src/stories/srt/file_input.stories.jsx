@@ -3,7 +3,7 @@ import React from 'react'
 import { FileInput } from '../../components/srt/file_input'
 
 export default {
-  title: 'Video File Input',
+  title: 'SRT/Video File Input',
   component: FileInput,
 }
 

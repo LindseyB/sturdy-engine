@@ -3,7 +3,7 @@ import React from 'react'
 import Filter from '../../components/srt/filter'
 
 export default {
-  title: 'Subtitle Filter',
+  title: 'SRT/Subtitle Filter',
   component: Filter,
 }
 

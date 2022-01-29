@@ -3,7 +3,7 @@ import React from 'react'
 import { Item } from '../../components/srt/item'
 
 export default {
-  title: 'SRT Item',
+  title: 'SRT/Item',
   component: Item,
 }
 

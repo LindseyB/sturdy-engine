@@ -5,19 +5,8 @@ import { Form, Panel } from 'react-bulma-components'
 import PropTypes from 'prop-types'
 
 export class Item extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      checked: this.props.checked,
-    }
-  }
-
   onClick = (id) => {
-    this.setState({ checked: !this.state.checked })
     this.props.onItemSelect(id)
-
-    return false
   }
 
   render() {
@@ -27,7 +16,7 @@ export class Item extends React.Component {
           <Form.Control fullwidth>
             <Form.Checkbox
               onChange={() => this.onClick(this.props.id)}
-              checked={this.state.checked}
+              checked={this.props.checked}
             >
               {this.props.text}
             </Form.Checkbox>
