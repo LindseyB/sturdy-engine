@@ -16,28 +16,33 @@ export class Srt extends React.Component {
     const parser = new srtParser2()
     let subtitles = parser.fromSrt(this.props.srt)
 
-    console.log(subtitles)
-
     this.state = {
       subtitles: subtitles,
       fileName: null,
+      filter: '',
     }
   }
 
   toggleItem = (id) => {
-    const item = this.state.subtitles.find((subtitle) => subtitle.id === id)
+    const itemIdx = this.state.subtitles.findIndex(
+      (subtitle) => subtitle.id === id
+    )
 
-    if (item) {
-      item.selected = !item.selected || true
+    if (itemIdx) {
+      const item = this.state.subtitles[itemIdx]
+      item.selected = !item.selected ?? true
     }
+
+    this.setState({ subtitles: this.state.subtitles })
   }
 
   setFileName = (fileName) => {
     this.setState({ fileName: fileName })
   }
 
-  onFilter = (filter) => {
-    console.log(filter)
+  onFilter = (e) => {
+    const filter = e.target.value
+    this.setState({ filter: filter.toLowerCase() })
   }
 
   render() {
@@ -46,9 +51,10 @@ export class Srt extends React.Component {
         <Panel.Header>Select Subtitles to Generate GIFs</Panel.Header>
         <FileInput onFileSelect={this.setFileName} />
         <Filter onChange={this.onFilter} />
-        <div style={{ maxHeight: '400px', overflowY: 'scroll' }}>
+        <div style={{ maxHeight: '300px', overflowY: 'scroll' }}>
           {this.state.subtitles.map((subtitle) => {
-            return (
+            return subtitle.selected ||
+              subtitle.text.toLowerCase().includes(this.state.filter) ? (
               <Item
                 text={subtitle.text}
                 id={subtitle.id}
@@ -56,7 +62,7 @@ export class Srt extends React.Component {
                 onItemSelect={this.toggleItem}
                 checked={subtitle.selected || false}
               />
-            )
+            ) : null
           })}
         </div>
       </Panel>

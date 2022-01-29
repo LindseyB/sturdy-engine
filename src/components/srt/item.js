@@ -16,22 +16,23 @@ export class Item extends React.Component {
   onClick = (id) => {
     this.setState({ checked: !this.state.checked })
     this.props.onItemSelect(id)
+
+    return false
   }
 
   render() {
     return (
-      <Panel.Block
-        key={this.props.id}
-        onClick={() => this.onClick(this.props.id)}
-      >
-        <Form.Control fullwidth>
-          <Form.Checkbox
-            onChange={() => this.onClick(this.props.id)}
-            checked={this.state.checked}
-          >
-            {this.props.text}
-          </Form.Checkbox>
-        </Form.Control>
+      <Panel.Block key={this.props.id}>
+        <Form.Field>
+          <Form.Control fullwidth>
+            <Form.Checkbox
+              onChange={() => this.onClick(this.props.id)}
+              checked={this.state.checked}
+            >
+              {this.props.text}
+            </Form.Checkbox>
+          </Form.Control>
+        </Form.Field>
       </Panel.Block>
     )
   }
