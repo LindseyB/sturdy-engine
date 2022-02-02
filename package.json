@@ -41,7 +41,7 @@
     "@storybook/addon-actions": "^6.5.0-alpha.31",
     "@storybook/addon-essentials": "^6.5.0-alpha.31",
     "@storybook/addon-links": "^6.5.0-alpha.31",
-    "@storybook/builder-webpack5": "^6.5.0-alpha.31",
+    "@storybook/builder-webpack5": "^6.5.0-alpha.34",
     "@storybook/manager-webpack5": "^6.5.0-alpha.31",
     "@storybook/react": "^6.5.0-alpha.31",
     "@types/react": "^17.0.38",
