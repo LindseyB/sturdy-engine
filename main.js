@@ -1,6 +1,7 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
+const Gifs = require('./gifs')
 
 function createWindow() {
   // Create the browser window.
@@ -40,6 +41,13 @@ app.whenReady().then(() => {
   ipcMain.on('synchronous-message', (event, arg) => {
     console.log(arg) // prints "ping"
     event.returnValue = 'pong'
+  })
+
+  ipcMain.on('make-gifs', (event, arg) => {
+    console.log(arg)
+    const generator = new Gifs(arg['fileName'], arg['subtitles'])
+    const ret = generator.generate()
+    event.returnValue = ret
   })
 })
 
