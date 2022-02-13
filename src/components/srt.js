@@ -4,6 +4,7 @@ import React from 'react'
 import srtParser2 from 'srt-parser-2'
 import { Panel } from 'react-bulma-components'
 import PropTypes from 'prop-types'
+const { ipcRenderer } = require('electron')
 
 import { Item } from './srt/item'
 import { FileInput } from './srt/file_input'
@@ -64,7 +65,14 @@ export class Srt extends React.Component {
     this.setState({ subtitles: subtitles })
   }
 
-  onSubmit = () => {}
+  onSubmit = () => {
+    console.log(
+      ipcRenderer.sendSync('make-gifs', {
+        fileName: this.state.fileName,
+        subtitles: this.state.subtitles.filter((subtitle) => subtitle.selected),
+      })
+    )
+  }
 
   render() {
     return (
