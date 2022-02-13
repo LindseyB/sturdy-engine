@@ -80,9 +80,6 @@ class Gifs {
   }
 
   generatePalette = (ffmpeg, startTime, durationTime, videoFile) => {
-    console.log(
-      `${ffmpeg} -y -ss ${startTime} -t ${durationTime} -i ${videoFile} -filter_complex "[0:v] palettegen" palette.png`
-    )
     execSync(
       `${ffmpeg} -y -ss ${startTime} -t ${durationTime} -i "${videoFile}" -filter_complex "[0:v] palettegen" palette.png`,
       (error, stdout, stderr) => {
@@ -110,7 +107,7 @@ class Gifs {
     text = text.replace("'", '’') // likely will be more special characters I need to escape
 
     execSync(
-      `${ffmpeg} -y -ss ${startTime} -t ${durationTime} -i "${videoFile}" -i palette.png -filter_complex "drawtext=text='${text}':x=(w-text_w)/2:y=(h-text_h)-10:fontsize=24:fontcolor=white:bordercolor=black:borderw=5:fontfile=${this.FONTFILE}[x];[x][1:v] paletteuse" ${fileName}.gif`,
+      `${ffmpeg} -y -ss ${startTime} -t ${durationTime} -i "${videoFile}" -i palette.png -filter_complex "scale=480:-1[v];[v]drawtext=text='${text}':x=(w-text_w)/2:y=(h-text_h)-10:fontsize=16:fontcolor=white:bordercolor=black:borderw=5:fontfile=${this.FONTFILE}[x];[x][1:v] paletteuse" ${fileName}.gif`,
       (error, stdout, stderr) => {
         if (error) {
           console.log(`error: ${error.message}`)
