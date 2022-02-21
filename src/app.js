@@ -6,7 +6,6 @@ import { Container, Content, Columns, Heading } from 'react-bulma-components'
 import { Menu } from './components/menu'
 import { Srt } from './components/srt'
 import AppState from './app_states'
-const { ipcRenderer } = require('electron')
 
 export default class App extends React.Component {
   constructor(props) {
@@ -27,7 +26,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
     return (
       <Container m={3}>
         <Heading>Surdy Engine</Heading>

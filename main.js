@@ -38,11 +38,14 @@ app.whenReady().then(() => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
 
-  ipcMain.on('synchronous-message', (event, arg) => {
-    console.log(arg) // prints "ping"
-    event.returnValue = 'pong'
+  // For async calls
+  ipcMain.handle('make-gifs', async (_, arg) => {
+    console.log(arg)
+    const generator = new Gifs(arg['fileName'], arg['subtitles'])
+    return generator.generate()
   })
 
+  // For syncronous calls, but probably not needed
   ipcMain.on('make-gifs', (event, arg) => {
     console.log(arg)
     const generator = new Gifs(arg['fileName'], arg['subtitles'])
