@@ -14,7 +14,12 @@ const Actions = ({ submitEnabled, onSubmit, onSelectAll, onDeselectAll }) => {
         <Button onClick={onDeselectAll} flexGrow={1}>
           Deselect All
         </Button>
-        <Button onClick={onSubmit} disabled={!submitEnabled} flexGrow={1}>
+        <Button
+          onClick={onSubmit}
+          disabled={!submitEnabled}
+          flexGrow={1}
+          color="info"
+        >
           Generate GIFs
         </Button>
       </Button.Group>

@@ -24,17 +24,17 @@ export class Menu extends React.Component {
           <Level.Item>
             <Form.InputFile
               renderAs="a"
-              color="primary"
               onChange={this.onSrtChange}
               label="Generate from SRT"
               inputProps={{ accept: '.srt' }}
+              className="is-info"
             />
           </Level.Item>
           <Level.Item>
             <Button
               renderAs="a"
-              color="primary"
               onClick={() => this.props.onStateChange(AppState.MASS)}
+              className="is-info"
             >
               Bulk Process GIFs
             </Button>

@@ -26,7 +26,7 @@ export class FileInput extends React.Component {
   renderInput = () => {
     return (
       <Form.InputFile
-        color="primary"
+        color="info"
         onChange={this.onChange}
         label="Select Video File"
         inputProps={{ accept: 'video/*' }}

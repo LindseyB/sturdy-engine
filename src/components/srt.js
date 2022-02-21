@@ -65,7 +65,8 @@ export class Srt extends React.Component {
     this.setState({ subtitles: subtitles })
   }
 
-  onSubmit = () => {
+  onSubmit = (e) => {
+    e.target.classList.add('is-loading')
     console.log(
       ipcRenderer.sendSync('make-gifs', {
         fileName: this.state.fileName,
