@@ -28,13 +28,14 @@ export default class App extends React.Component {
   render() {
     return (
       <Container m={3}>
-        <Heading>Surdy Engine</Heading>
-        <Columns>
-          <Columns.Column>
+        <Heading key="heading">Surdy Engine</Heading>
+        <Columns key="columns">
+          <Columns.Column key="column">
             <Menu
               appState={this.state.appState}
               onStateChange={this.onStateChange}
               onSrtRead={this.onSrtRead}
+              key="menu"
             />
             {this.state.appState === AppState.MAIN && (
               <Content>Welcome to Sturdy Engine the GIF processor.</Content>
