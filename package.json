@@ -65,7 +65,7 @@
     "babel-loader": "^8.2.3",
     "bulma": "^0.9.3",
     "cross-env": "^7.0.3",
-    "css-loader": "^6.7.0",
+    "css-loader": "^6.7.1",
     "electron-squirrel-startup": "^1.0.0",
     "ffmpeg-static": "^5.0.0",
     "node-sass": "^7.0.1",
