@@ -104,7 +104,8 @@ class Gifs {
     fileName,
     text
   ) => {
-    text = text.replace("'", '’') // likely will be more special characters I need to escape
+    text = text.replace("'", '’') // replace the apostrophe with the unicode apostrophe
+    text = text.replace('\n', '\f') // remove newlines
 
     execSync(
       `${ffmpeg} -y -ss ${startTime} -t ${durationTime} -i "${videoFile}" -i palette.png -filter_complex "scale=480:-1[v];[v]drawtext=text='${text}':x=(w-text_w)/2:y=(h-text_h)-10:fontsize=16:fontcolor=white:bordercolor=black:borderw=2:fontfile=${this.FONTFILE}[x];[x][1:v] paletteuse" ${fileName}.gif`,
