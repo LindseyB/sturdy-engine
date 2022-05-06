@@ -9,6 +9,10 @@ export class Item extends React.Component {
     this.props.onItemSelect(id)
   }
 
+  formatText = (text) => {
+    return text.replace(/<[^>]*>?/gm, '') // remove html
+  }
+
   render() {
     return (
       <Panel.Block key={this.props.id}>
@@ -17,8 +21,9 @@ export class Item extends React.Component {
             <Form.Checkbox
               onChange={() => this.onClick(this.props.id)}
               checked={this.props.checked}
+              style={{ whiteSpace: 'pre-wrap' }}
             >
-              {this.props.text}
+              {this.formatText(this.props.text)}
             </Form.Checkbox>
           </Form.Control>
         </Form.Field>

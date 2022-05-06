@@ -2,7 +2,13 @@ import '../scss/main.scss'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Container, Content, Columns, Heading } from 'react-bulma-components'
+import {
+  Container,
+  Content,
+  Columns,
+  Heading,
+  Image,
+} from 'react-bulma-components'
 import { Menu } from './components/menu'
 import { Srt } from './components/srt'
 import AppState from './app_states'
@@ -14,6 +20,7 @@ export default class App extends React.Component {
     this.state = {
       appState: AppState.MAIN,
       srt: '',
+      gifs: [],
     }
   }
 
@@ -23,6 +30,11 @@ export default class App extends React.Component {
 
   onSrtRead = (srt) => {
     this.setState({ srt: srt, appState: AppState.SRT })
+  }
+
+  onFinishedProcessingSRT = (gifs) => {
+    console.log(gifs)
+    this.setState({ appState: AppState.MAIN, gifs: gifs.split(','), srt: '' })
   }
 
   render() {
@@ -38,10 +50,27 @@ export default class App extends React.Component {
               key="menu"
             />
             {this.state.appState === AppState.MAIN && (
-              <Content>Welcome to Sturdy Engine the GIF processor.</Content>
+              <>
+                <Content>Welcome to Sturdy Engine the GIF processor.</Content>
+                <Content>Recently generated GIFs...</Content>
+                <div style={{ display: 'flex', flexFlow: 'wrap' }}>
+                  {this.state.gifs.length > 0 &&
+                    this.state.gifs.map((gif) => (
+                      <Image
+                        key={gif}
+                        src={gif}
+                        p={1}
+                        style={{ width: '50%' }}
+                      />
+                    ))}
+                </div>
+              </>
             )}
             {this.state.appState === AppState.SRT && (
-              <Srt srt={this.state.srt} />
+              <Srt
+                srt={this.state.srt}
+                onFinished={this.onFinishedProcessingSRT}
+              />
             )}
           </Columns.Column>
         </Columns>

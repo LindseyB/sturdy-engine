@@ -76,6 +76,7 @@ export class Srt extends React.Component {
       .then((files) => {
         e.target.classList.remove('is-loading')
         console.log(files)
+        this.props.onFinished(files)
       })
   }
 
@@ -112,4 +113,5 @@ export class Srt extends React.Component {
 
 Srt.propTypes = {
   srt: PropTypes.string.isRequired,
+  onFinished: PropTypes.func.isRequired,
 }

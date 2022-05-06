@@ -75,10 +75,10 @@ class Gifs {
         sub.text
       )
 
-      gifs += `${fileName}.gif`
+      gifs.push(`${fileName}.gif`)
     }
 
-    return gifs
+    return gifs.join(',')
   }
 
   generatePalette = (ffmpeg, startTime, durationTime, videoFile) => {
