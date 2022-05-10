@@ -41,7 +41,7 @@
     "@storybook/addon-actions": "^6.5.0-beta.7",
     "@storybook/addon-essentials": "^6.5.0-beta.7",
     "@storybook/addon-links": "^6.5.0-beta.7",
-    "@storybook/builder-webpack5": "^6.5.0-beta.2",
+    "@storybook/builder-webpack5": "^6.5.0-beta.7",
     "@storybook/manager-webpack5": "^6.5.0-beta.7",
     "@storybook/react": "^6.5.0-beta.7",
     "@types/react": "^18.0.9",
