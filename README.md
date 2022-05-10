@@ -1,4 +1,5 @@
 # Sturdy Engine
+
 ## The Little GIF Generator That Can
 
 ![Screenshot of a list of subtitles with checkboxes next to them demonstrating the app](https://user-images.githubusercontent.com/33750/167057745-cf7d4551-ca5d-463d-b5ad-866281c05fe0.png)
