@@ -48,7 +48,7 @@
     "@types/react-dom": "^18.0.4",
     "concurrently": "^7.2.1",
     "electron": "^18.2.4",
-    "eslint": "^8.15.0",
+    "eslint": "^8.16.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-storybook": "^0.5.12",
     "husky": "^8.0.1",
