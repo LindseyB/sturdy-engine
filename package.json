@@ -46,7 +46,7 @@
     "@storybook/react": "^6.5.13",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
-    "concurrently": "^7.5.0",
+    "concurrently": "^7.6.0",
     "electron": "^21.3.0",
     "eslint": "^8.27.0",
     "eslint-plugin-react": "^7.31.11",
