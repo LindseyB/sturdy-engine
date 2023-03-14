@@ -73,7 +73,7 @@
     "react-bulma-components": "^4.1.0",
     "react-dom": "^18.2.0",
     "srt-parser-2": "^1.2.2",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.2"
   },
   "config": {
     "forge": {
