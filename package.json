@@ -44,7 +44,7 @@
     "@storybook/builder-webpack5": "^7.0.23",
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/react": "^7.0.23",
-    "@types/react": "^18.2.13",
+    "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "concurrently": "^8.2.0",
     "electron": "^25.2.0",
