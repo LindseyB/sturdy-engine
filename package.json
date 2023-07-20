@@ -66,6 +66,7 @@
     "bulma": "^0.9.4",
     "cross-env": "^7.0.3",
     "css-loader": "^6.8.1",
+    "electron-rebuild": "^3.2.9",
     "electron-squirrel-startup": "^1.0.0",
     "ffmpeg-static": "^5.1.0",
     "node-sass": "^9.0.0",
