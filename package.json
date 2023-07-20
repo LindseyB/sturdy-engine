@@ -50,7 +50,7 @@
     "electron": "^25.3.0",
     "eslint": "^8.44.0",
     "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-storybook": "^0.6.12",
+    "eslint-plugin-storybook": "^0.6.13",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "prettier": "3.0.0",
