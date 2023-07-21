@@ -1,7 +1,7 @@
 import '../scss/main.scss'
 
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import {
   Container,
   Content,
@@ -79,5 +79,6 @@ export default class App extends React.Component {
   }
 }
 
-const domContainer = document.querySelector('#react-root')
-ReactDOM.render(<App />, domContainer)
+const container = document.querySelector('#react-root')
+const root = createRoot(container)
+root.render(<App />)
