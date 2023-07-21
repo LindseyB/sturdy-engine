@@ -34,6 +34,14 @@ Run eslint
 
 Run eslint with autofix enabled
 
+### `npm run format`
+
+Run prettier
+
+### `npm run format:fix`
+
+Run prettier with autofix enabled
+
 ### `npm run storybook`
 
 Run storybook
