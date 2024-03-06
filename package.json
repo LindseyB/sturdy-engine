@@ -45,7 +45,7 @@
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/react": "^7.6.17",
     "@types/react": "^18.2.63",
-    "@types/react-dom": "^18.2.19",
+    "@types/react-dom": "^18.2.20",
     "concurrently": "^8.2.2",
     "electron": "^29.1.0",
     "eslint": "^8.57.0",
