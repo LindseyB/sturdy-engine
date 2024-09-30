@@ -40,7 +40,7 @@
     "@electron-forge/maker-zip": "^7.5.0",
     "@storybook/addon-actions": "^8.3.2",
     "@storybook/addon-essentials": "^8.3.3",
-    "@storybook/addon-links": "^8.3.3",
+    "@storybook/addon-links": "^8.3.4",
     "@storybook/builder-webpack5": "^8.3.3",
     "@storybook/manager-webpack5": "^6.5.16",
     "@storybook/react": "^8.3.3",
