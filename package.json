@@ -30,7 +30,7 @@
   "author": "LindseyB",
   "license": "CC0-1.0",
   "devDependencies": {
-    "@babel/core": "^7.25.8",
+    "@babel/core": "^7.25.9",
     "@babel/preset-env": "^7.25.9",
     "@babel/preset-react": "^7.25.9",
     "@electron-forge/cli": "^7.5.0",
