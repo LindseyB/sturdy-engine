@@ -39,7 +39,7 @@
     "@electron-forge/maker-squirrel": "^7.5.0",
     "@electron-forge/maker-zip": "^7.5.0",
     "@storybook/addon-actions": "^8.4.1",
-    "@storybook/addon-essentials": "^8.4.1",
+    "@storybook/addon-essentials": "^8.4.2",
     "@storybook/addon-links": "^8.4.1",
     "@storybook/builder-webpack5": "^8.4.1",
     "@storybook/manager-webpack5": "^6.5.16",
