@@ -52,7 +52,7 @@
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-storybook": "^0.11.1",
     "husky": "^9.1.7",
-    "lint-staged": "^15.2.11",
+    "lint-staged": "^15.3.0",
     "prettier": "3.4.2",
     "sass": "^1.83.0",
     "sass-loader": "^16.0.4",
