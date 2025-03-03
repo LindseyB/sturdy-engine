@@ -43,7 +43,7 @@
     "@storybook/addon-links": "^8.6.2",
     "@storybook/builder-webpack5": "^8.6.3",
     "@storybook/manager-webpack5": "^6.5.16",
-    "@storybook/react": "^8.6.2",
+    "@storybook/react": "^8.6.3",
     "@types/react": "^18.3.13",
     "@types/react-dom": "^18.3.1",
     "concurrently": "^9.1.2",
